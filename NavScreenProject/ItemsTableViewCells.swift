@@ -66,30 +66,39 @@ class ItemsTableViewCells: UITableViewCell {
         return stackView
     }()
     
+    lazy var detailStackView: UIStackView = {
+        let stackView = UIStackView (arrangedSubviews: [titleTimeSubHeadingLabelStackView,
+                                                        folderImage2OfNotesLabelStackView])
+        stackView.axis = . vertical
+        stackView.distribution = .fillProportionally
+        stackView.spacing = 1.0
+        stackView.alignment = . leading
+        stackView.translatesAutoresizingMaskIntoConstraints=false
+        return stackView
+    }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: reuseIdentifier)
         
-        addSubview(folderImage2)
         addSubview(folderImage2OfNotesLabelStackView)
         addSubview(titleTimeSubHeadingLabelStackView)
+        addSubview(detailStackView)
         
-        folderImage2.heightAnchor.constraint(equalToConstant: 5).isActive = true
-        folderImage2.widthAnchor.constraint(equalToConstant: 5).isActive = true
-        folderImage2.leftAnchor.constraint(equalTo: leftAnchor, constant: 20).isActive = true
-        folderImage2.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0).isActive = true
+        detailStackView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        detailStackView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        detailStackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 20).isActive = true
+        detailStackView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0).isActive = true
 
         folderImage2OfNotesLabelStackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 20).isActive = true
-        folderImage2OfNotesLabelStackView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0).isActive = true
-        folderImage2OfNotesLabelStackView.heightAnchor.constraint(equalToConstant: 25).isActive = true
-        folderImage2OfNotesLabelStackView.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        folderImage2OfNotesLabelStackView.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0).isActive = true
+        folderImage2OfNotesLabelStackView.heightAnchor.constraint(equalToConstant: 20).isActive = true
+        folderImage2OfNotesLabelStackView.widthAnchor.constraint(equalToConstant: 20).isActive = true
         
-        titleTimeSubHeadingLabelStackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 20).isActive = true
-        titleTimeSubHeadingLabelStackView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        titleTimeSubHeadingLabelStackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -20).isActive = true
-//        titleTimeSubHeadingLabelStackView.heightAnchor.constraint(equalToConstant: 25).isActive = true
-//        titleTimeSubHeadingLabelStackView.widthAnchor.constraint(equalToConstant: 25).isActive = true
-//        titleTimeSubHeadingLabelStackView.rightAnchor.constraint(equalTo: leftAnchor, constant: -16).isActive = true
+        titleTimeSubHeadingLabelStackView.leftAnchor.constraint(equalTo: leftAnchor, constant: -20).isActive = true
+        titleTimeSubHeadingLabelStackView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+        titleTimeSubHeadingLabelStackView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        titleTimeSubHeadingLabelStackView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+
     }
     
     required init?(coder aDecoder: NSCoder) { fatalError("init(coder:) has not been implemented") }
