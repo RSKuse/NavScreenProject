@@ -13,7 +13,7 @@
 		F3DFB4F729CC24CE0010A025 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3DFB4F529CC24CE0010A025 /* Main.storyboard */; };
 		F3DFB4F929CC24CE0010A025 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F3DFB4F829CC24CE0010A025 /* Assets.xcassets */; };
 		F3DFB4FC29CC24CE0010A025 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3DFB4FA29CC24CE0010A025 /* LaunchScreen.storyboard */; };
-		F3DFB50429CC251C0010A025 /* ViewControlleTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DFB50329CC251C0010A025 /* ViewControlleTwo.swift */; };
+		F3DFB50429CC251C0010A025 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DFB50329CC251C0010A025 /* DetailViewController.swift */; };
 		F3DFB50629CC25760010A025 /* FoldersTableViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DFB50529CC25760010A025 /* FoldersTableViewCells.swift */; };
 		F3DFB50829CC25B90010A025 /* ItemsTableViewCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3DFB50729CC25B90010A025 /* ItemsTableViewCells.swift */; };
 /* End PBXBuildFile section */
@@ -27,7 +27,7 @@
 		F3DFB4F829CC24CE0010A025 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F3DFB4FB29CC24CE0010A025 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F3DFB4FD29CC24CE0010A025 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F3DFB50329CC251C0010A025 /* ViewControlleTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControlleTwo.swift; sourceTree = "<group>"; };
+		F3DFB50329CC251C0010A025 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F3DFB50529CC25760010A025 /* FoldersTableViewCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoldersTableViewCells.swift; sourceTree = "<group>"; };
 		F3DFB50729CC25B90010A025 /* ItemsTableViewCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsTableViewCells.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -43,6 +43,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		45E5D2C429CD925B00B94ED2 /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F3DFB4F329CC24CE0010A025 /* ViewController.swift */,
+				F3DFB50529CC25760010A025 /* FoldersTableViewCells.swift */,
+			);
+			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		45E5D2C529CD928900B94ED2 /* DetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F3DFB50329CC251C0010A025 /* DetailViewController.swift */,
+				F3DFB50729CC25B90010A025 /* ItemsTableViewCells.swift */,
+			);
+			path = DetailViewController;
+			sourceTree = "<group>";
+		};
 		F3DFB4E329CC24CE0010A025 = {
 			isa = PBXGroup;
 			children = (
@@ -64,10 +82,8 @@
 			children = (
 				F3DFB4EF29CC24CE0010A025 /* AppDelegate.swift */,
 				F3DFB4F129CC24CE0010A025 /* SceneDelegate.swift */,
-				F3DFB4F329CC24CE0010A025 /* ViewController.swift */,
-				F3DFB50329CC251C0010A025 /* ViewControlleTwo.swift */,
-				F3DFB50529CC25760010A025 /* FoldersTableViewCells.swift */,
-				F3DFB50729CC25B90010A025 /* ItemsTableViewCells.swift */,
+				45E5D2C429CD925B00B94ED2 /* HomeViewController */,
+				45E5D2C529CD928900B94ED2 /* DetailViewController */,
 				F3DFB4F529CC24CE0010A025 /* Main.storyboard */,
 				F3DFB4F829CC24CE0010A025 /* Assets.xcassets */,
 				F3DFB4FA29CC24CE0010A025 /* LaunchScreen.storyboard */,
@@ -147,7 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3DFB50429CC251C0010A025 /* ViewControlleTwo.swift in Sources */,
+				F3DFB50429CC251C0010A025 /* DetailViewController.swift in Sources */,
 				F3DFB4F429CC24CE0010A025 /* ViewController.swift in Sources */,
 				F3DFB50829CC25B90010A025 /* ItemsTableViewCells.swift in Sources */,
 				F3DFB50629CC25760010A025 /* FoldersTableViewCells.swift in Sources */,

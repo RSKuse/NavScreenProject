@@ -7,9 +7,9 @@
 
 import UIKit
 
-class ViewControllerTwo: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class DetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    lazy var infoTableView2: UITableView = {
+    lazy var detailTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.dataSource = self
         tableView.delegate = self
@@ -26,16 +26,16 @@ class ViewControllerTwo: UIViewController, UITableViewDataSource, UITableViewDel
     }
     
     func setupTableViewConstraints2() {
-        view.addSubview(infoTableView2)
+        view.addSubview(detailTableView)
         
-        infoTableView2.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        infoTableView2.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        infoTableView2.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
-        infoTableView2.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
+        detailTableView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        detailTableView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
+        detailTableView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        detailTableView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor).isActive = true
     }
     
     func registerCells2() {
-        infoTableView2.register(ItemsTableViewCells.self,forCellReuseIdentifier: "ItemsTableViewCells")
+        detailTableView.register(ItemsTableViewCells.self,forCellReuseIdentifier: "ItemsTableViewCells")
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {

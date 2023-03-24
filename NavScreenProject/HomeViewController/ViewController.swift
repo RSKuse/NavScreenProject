@@ -64,7 +64,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
-        let viewControllerTwo = ViewControllerTwo()
-        present(viewControllerTwo, animated: true)
+        let detailViewController = DetailViewController()
+        present(detailViewController, animated: true)
     }
 }

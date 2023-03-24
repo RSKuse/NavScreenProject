@@ -22,13 +22,25 @@ class ItemsTableViewCells: UITableViewCell {
         let label = UILabel()
         label.text = "09:16 import UIKit"
         label.textColor = .lightGray
-        label.textAlignment = .right
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    lazy var folderImage2: UIImageView = {
+    lazy var titleTimeSubHeadingLabelStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [titleLabel, timeAndSubHeadingLabel])
+        stackView.axis = .vertical
+        stackView.distribution = .fillProportionally
+        stackView.spacing = 1.0
+        stackView.backgroundColor = .red
+        stackView.alignment = .leading
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        return stackView
+    }()
+    
+    ///////////
+    
+    lazy var folderImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "folder_icon4")
         imageView.contentMode = .scaleAspectFill
@@ -37,42 +49,34 @@ class ItemsTableViewCells: UITableViewCell {
         return imageView
     }()
     
-    lazy var notesItemLabel: UILabel = {
+    lazy var notesLabel: UILabel = {
         let label = UILabel()
         label.text = "Notes"
         label.textColor = .lightGray
-        label.textAlignment = .right
-        label.font = UIFont.systemFont(ofSize: 12, weight: .regular)
+        label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
 
-    lazy var titleTimeSubHeadingLabelStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [titleLabel, timeAndSubHeadingLabel, folderImage2OfNotesLabelStackView])
-        stackView.axis = .vertical
-        stackView.distribution = .fillProportionally
-        stackView.spacing = 1.0
-        stackView.alignment = .leading
-        stackView.translatesAutoresizingMaskIntoConstraints = false
-        return stackView
-    }()
-    lazy var folderImage2OfNotesLabelStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [folderImage2, notesItemLabel])
+    lazy var folderImageNotesLabelStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: [folderImageView, notesLabel])
         stackView.axis = .horizontal
         stackView.distribution = .fillProportionally
-        stackView.spacing = 1.0
-        stackView.alignment = .leading
+        stackView.spacing = 3.0
+        stackView.alignment = .center
+        stackView.backgroundColor = .green
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     
     lazy var detailStackView: UIStackView = {
         let stackView = UIStackView (arrangedSubviews: [titleTimeSubHeadingLabelStackView,
-                                                        folderImage2OfNotesLabelStackView])
+                                                        folderImageNotesLabelStackView])
         stackView.axis = . vertical
         stackView.distribution = .fillProportionally
         stackView.spacing = 1.0
-        stackView.alignment = . leading
+        stackView.backgroundColor = .blue
+        stackView.alignment = .leading
         stackView.translatesAutoresizingMaskIntoConstraints=false
         return stackView
     }()
@@ -80,24 +84,18 @@ class ItemsTableViewCells: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: UITableViewCell.CellStyle.default, reuseIdentifier: reuseIdentifier)
         
-        addSubview(folderImage2OfNotesLabelStackView)
-        addSubview(titleTimeSubHeadingLabelStackView)
         addSubview(detailStackView)
         
-        detailStackView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        detailStackView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        detailStackView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         detailStackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 20).isActive = true
-        detailStackView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0).isActive = true
-
-        folderImage2OfNotesLabelStackView.leftAnchor.constraint(equalTo: leftAnchor, constant: 20).isActive = true
-        folderImage2OfNotesLabelStackView.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0).isActive = true
-        folderImage2OfNotesLabelStackView.heightAnchor.constraint(equalToConstant: 20).isActive = true
-        folderImage2OfNotesLabelStackView.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        detailStackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -20).isActive = true
         
-        titleTimeSubHeadingLabelStackView.leftAnchor.constraint(equalTo: leftAnchor, constant: -20).isActive = true
-        titleTimeSubHeadingLabelStackView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
-        titleTimeSubHeadingLabelStackView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-        titleTimeSubHeadingLabelStackView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        folderImageNotesLabelStackView.rightAnchor.constraint(equalTo: rightAnchor,
+                                                            constant: -20).isActive = true
+        
+        folderImageView.widthAnchor.constraint(equalToConstant: 20).isActive = true
+        folderImageView.heightAnchor.constraint(equalToConstant: 20).isActive = true
 
     }
     
