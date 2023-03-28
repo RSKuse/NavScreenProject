@@ -9,6 +9,8 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
+    var arrayOfCities = ["Cape Town", "Johanesburg", "Durban", "Bloemfontein"]
+    
     lazy var infoTableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .insetGrouped)
         tableView.dataSource = self
@@ -23,6 +25,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         view.backgroundColor = .white
         setupTableViewConstraints()
         registerCells()
+        
+        arrayOfCities.append("Rusternburg")
+        arrayOfCities.append("Limpopo")
+        
+        arrayOfCities += ["Chicago", "New York", "London"]
     }
     
     func setupTableViewConstraints() {
@@ -39,22 +46,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 5
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return 2
-        } else if section == 1 {
-            return 8
-        } else if section == 2 {
-            return 3
-        } else {
-            return 1
-        }
+        return arrayOfCities.count // 4 number of items in the array
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let userCell = tableView.dequeueReusableCell(withIdentifier: "FoldersTableViewCells", for: indexPath) as! FoldersTableViewCells
+        userCell.titleLabel.text = arrayOfCities[indexPath.row] //"\(indexPath.row)"
         return userCell
     }
     
@@ -63,8 +64,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        tableView.deselectRow(at: indexPath, animated: true)
+        /*
         let detailViewController = DetailViewController()
-        present(detailViewController, animated: true)
+        present(detailViewController, animated: false)
+        */
     }
 }

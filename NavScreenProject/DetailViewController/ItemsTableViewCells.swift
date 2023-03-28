@@ -51,7 +51,7 @@ class ItemsTableViewCells: UITableViewCell {
     
     lazy var notesLabel: UILabel = {
         let label = UILabel()
-        label.text = "Notes"
+        label.text = "Ndalo: Age 6"
         label.textColor = .lightGray
         label.font = UIFont.systemFont(ofSize: 14, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -59,7 +59,7 @@ class ItemsTableViewCells: UITableViewCell {
     }()
 
     lazy var folderImageNotesLabelStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [folderImageView, notesLabel])
+        let stackView = UIStackView(arrangedSubviews: [notesLabel, folderImageView])
         stackView.axis = .horizontal
         stackView.distribution = .fillProportionally
         stackView.spacing = 3.0
@@ -70,8 +70,10 @@ class ItemsTableViewCells: UITableViewCell {
     }()
     
     lazy var detailStackView: UIStackView = {
-        let stackView = UIStackView (arrangedSubviews: [titleTimeSubHeadingLabelStackView,
-                                                        folderImageNotesLabelStackView])
+        let arrayOfStackView = [folderImageNotesLabelStackView, titleTimeSubHeadingLabelStackView]
+        
+        
+        let stackView = UIStackView(arrangedSubviews: arrayOfStackView)
         stackView.axis = . vertical
         stackView.distribution = .fillProportionally
         stackView.spacing = 1.0

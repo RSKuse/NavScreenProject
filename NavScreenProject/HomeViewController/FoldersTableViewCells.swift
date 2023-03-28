@@ -11,7 +11,6 @@ class FoldersTableViewCells: UITableViewCell {
     
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "All iCloud"
         label.textColor = .black
         label.font = UIFont.systemFont(ofSize: 16, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
